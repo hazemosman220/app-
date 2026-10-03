@@ -1,0 +1,5 @@
+5001 1001 2001 3001 4001 Tanta,Gharbia Cairo,Nasr_City Delivered 2026-09-20
+5002 1002 2002 3002 4002 Cairo,Nasr_City Giza,Dokki On_Delivery 2026-09-22
+5003 1003 2003 3003 4003 Alexandria,Sidi_Gaber Tanta,Gharbia Processing 2026-09-25
+5004 1004 2005 3005 4004 Mansoura,Dakahlia Cairo,Nasr_City Pending 2026-09-27
+5005 1005 2001 3001 4001 Giza,Dokki Tanta,Gharbia Delivered 2026-09-29
