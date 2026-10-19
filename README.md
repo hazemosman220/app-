@@ -1,1 +1,0 @@
-# Logistics-Delivery-Management-System

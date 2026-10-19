@@ -1,4 +1,0 @@
-4001 Tanta_Main_Warehouse Tanta,Gharbia 5000 Active
-4002 Cairo_Warehouse Cairo,Nasr_City 8000 Active
-4003 Alexandria_Warehouse Alexandria,Smouha 6000 Active
-4004 Mansoura_Warehouse Mansoura,Dakahlia 4000 Active

@@ -1,8 +1,0 @@
-6001 Ahmed_Mohamed 01012345678 ahmed.mohamed@gmail.com Manager 25000 Active
-6002 Omar_Hassan 01123456789 omar.hassan@gmail.com Dispatcher 18000 Active
-6003 Mahmoud_Ali 01234567890 mahmoud.ali@gmail.com Warehouse_Manager 22000 Active
-6004 Youssef_Samir 01567890123 youssef.samir@gmail.com Customer_Service 16000 Active
-6005 Karim_Adel 01098765432 karim.adel@gmail.com Dispatcher 18000 On Leave
-6006 Mostafa_Ahmed 01187654321 mostafa.ahmed@gmail.com Warehouse_Worker 15000 Active
-6007 Khaled_Tarek 01276543210 khaled.tarek@gmail.com Accountant 20000 Active
-6008 Amr_Sameh 01565432109 amr.sameh@gmail.com Customer_Service 16000 Inactive

@@ -1,5 +1,0 @@
-3001 ABC-123 Van Toyota_Hiace 2022 Available
-3002 DEF-456 Truck Isuzu_NPR 2021 In Use
-3003 GHI-789 Van Hyundai_H1 2023 Available
-3004 JKL-321 Truck Mitsubishi_Canter 2020 Maintenance
-3005 MNO-654 Van Renault_Master 2022 Available
