@@ -3,156 +3,161 @@
 #include<array>
 #include<string>
 using namespace std ; 
-        int menu ()
+int menu ()
+{
+        cout << "\n=================\n";
+        cout << "\nLIBRARY MANAGEMENT SYSTEM\n";
+        cout <<"\n==================\n";
+        cout <<"1.Add new book\n";
+        cout <<"2.Display All Books \n";
+        cout <<"3.Search For A Book\n";
+        cout <<"4.Borrow A Book\n";
+        cout <<"5.Return A Book \n";
+        cout <<"6.Display Avaliable Books \n"; 
+        cout <<"7.Display Borrowed Books \n";
+        cout <<"8.EXIT \n";
+        int choose ;
+        cout <<"Choose number for menu \n " ;  cin >> choose ;
+        return choose ;
+}
+int main ()
+{
+        bool run = true ;
+        int search ;
+        int book_id ;
+        string book_author;
+        string book_name ;
+        string Status ;
+        vector<int>id ;
+        vector<string>name;
+        vector<string>author;
+        vector<string>status;
+        while (run){
+        switch(menu())
+        {      
+        case 1 :
         {
-                cout << "\n=================\n";
-                cout << "\nLIBRARY MANAGEMENT SYSTEM\n";
-                cout <<"\n==================\n";
-                cout <<"1.Add new book\n";
-                cout <<"2.Display All Books \n";
-                cout <<"3.Search For A Book\n";
-                cout <<"4.Borrow A Book\n";
-                cout <<"5.Return A Book \n";
-                cout <<"6.Display A Valiable Books \n"; 
-                cout <<"7.Display A Borrow Books \n";
-                cout <<"8.EXIT \n";
-                int choose ;
-                cout <<"Choose number for menu \n " ;  cin >> choose ;
-                return choose ;
+                cout <<"Enter ID Of The Book:";cin >> book_id ;
+                cout << "Enter Name of The Book:" ;cin >> book_name ;
+                cout << "Enter Author's Name:";cin >>book_author ;
+                cout << "Enter Status Of The Book:";cin >> Status;
+                id.push_back(book_id);
+                status.push_back(Status);
+                name.push_back(book_name);
+                author.push_back(book_author);
+                cout<<"\nSuccessfully completed\n";
+                break ;         
         }
-                int main ()
+        case 2 :
+        {
+                for (int i = 0 ; i < id.size(); i++ )
                 {
-                        bool run = true ;
-                        bool found; 
-                        int search ;
-                        int book_id ;
-                        string book_author;
-                        string book_name ;
-                        vector<int>id ;
-                        vector<string>name;
-                        vector<string>author;
-                        vector<string>status;
-                                status.push_back("borrow");
-                                status.push_back("avalible");
-                                status.push_back("avalibe ");
-                                status.push_back("borrow");
-                                status.push_back("borrow");
-                        while (run){
-                        switch(menu())
-                        {      
-                        case 1 :
+                        cout <<id.at(i)  <<     " "   << name.at(i) <<   " "   << author.at(i)  <<  "\n" ;
+                        cout << "===================\n" ;
+                }
+                break ;
+        }
+        case 3 :
+        {
+                bool found; 
+                cout <<"Enter ID To Search :";cin>>search ;
+                for (int i = 0 ; i <id.size();i++)
+                {
+                        if (search==id[i])
                         {
-                                cout <<"ID :    \n" ;                        cin >> book_id ;
-                                cout << "The Name of The Book :    \n" ;     cin >> book_name ;
-                                cout << "The author's name :    \n";         cin >>book_author ;
-                                id.push_back(book_id);
-                                name.push_back(book_name);
-                                author.push_back(book_author);
-                                cout<<"\nSuccessfully completed\n";
-                                break ;         
+                                cout << "Found!"<< "\n" ;
+                                cout << "ID: "<< id[i]<< "\n" ;
+                                cout << "Book Title : " << name[i] << "\n" ;
+                                cout << "Author Name : " << author[i] << "\n" ;
+                                cout << "Book Status : " << status[i] << "\n" ;
+                                found=true;
                         }
-                        case 2 :
+                }
+                if(found==false)
+                {
+                        cout<<"Book Not Found!";
+                }
+                break ;
+        }
+        case 4 : 
+        {
+                bool found=false; 
+                cout <<"Enter ID To Borrow:";cin >> book_id ;
+                for (int i = 0 ; i < id.size() ;i++)
+                {
+                        if (book_id==id[i])
                         {
-                                for (int i = 0 ; i < id.size(); i++ )
+                                found = true ;
+                                if (status[i]=="Avalible")
                                 {
-                                        cout <<id.at(i)  <<     " "   << name.at(i) <<   " "   << author.at(i)  <<  "\n" ;
-                                        cout << "\n==========\n" ;
+                                        status[i] ="Borrowed" ;
+                                        cout << "Book Borrowed successfuly \n " ;
                                 }
-                                break ;
-                        }
-                        case 3 :
-                        {
-                                bool found; 
-                                cout <<"Enter id the book you want :   \n "; cin>>search ;
-                                for (int i = 0 ; i <id.size();i++)
+                                if (status[i]=="Borrowed")
                                 {
-                                        if (search==id[i])
-                                {
-                                                cout << "ID:   "  << id[i]<< "\n" ;
-                                                cout << "Book title :  " << name[i] << "\n" ;
-                                                cout << "author name :   " << author[i] << "\n" ;
-                                                found=true;
+                                        cout <<"Book Is Borrowed\n" ;
                                 }
                         }
-                        if(found==false)
+                }
+                if (found ==false)
+                {
+                        cout <<"Book not found \n" ; 
+                }
+                break ;
+        }   
+        case 5 :
+        {
+                bool found=false; 
+                cout <<"Enter ID To Return: ";cin >> book_id ;
+                for (int i = 0 ; i < id.size() ; i++)
+                {
+                        if (book_id==id[i])
                         {
-                                cout<<"rvsvs";
-                        }
-                                break ;
-                        }
-                        case 4 : 
-                        {
-                                        cout <<"Enter id the book you want borrow \n" ; cin >> book_id ;
-                                        for (int i = 0 ; i < id.size() ;i++)
-                                        {
-                                                if (book_id==id[i])
-                                                {
-                                                        found = true ;
-                                                }
-                                                if (status[i]=="avalinble")
-                                                {
-                                                        status[i] =  "borrow" ;
-                                                        cout << "Book borrowed successfuly \n " ;
-                                                }
-                                                if (status[i]=="borrow")
-                                                {
-                                                        cout <<"Book not avalible \n" ;
-                                                }
-                                                if (found ==false)
-                                                {
-                                                        cout <<"Book not found \n" ; 
-                                                }
-                                        }
-                                        break ;
-                        }   
-                        case 5 :
-                        {
-                                cout <<"Enter the book id you want return \n" ; cin >> book_id ;
-                                for (int i = 0 ; i < id.size() ; i++)
+                                found = true ;
+                                if (status[i]=="Borrowed")
                                 {
-                                        if (book_id==id[i])
-                                        {
-                                                found = true ;
-                                        }
-                                        if (status[i]=="borrowed")
-                                        {
-                                                status[i]="avalible" ;
-                                                cout <<"Book return successfuly \n" ;
-                                        }     
-                                }
-                                break ;
-                        }
-                        case 6 :
-                        {
-                                for (int i = 0 ; i < id.size() ; i++)
+                                        status[i]="Avalible" ;
+                                        cout <<"Book Returned Successfuly \n" ;
+                                }     
+                                else if (status[i]=="Avalible")
                                 {
-                                        if (status[i]== "avalible")
-                                        {
-                                                cout <<id.at(i)  <<     " "   << name.at(i) <<   " "   << author.at(i)  <<  "\n" ;
-                                        }
-                                        if (status[i]!="avalible")
-                                        {
-                                                cout <<"BOOK NOT AVALIBLE\n" ;
-                                        }
-                                }
-                                break ; 
+                                        cout <<"Book Is Already Avalible\n" ;
+                                }     
                         }
-                        case 7 :
+                if(found == false)
+                {
+                        cout<<"Book Not Found!\n";
+                }
+                }
+                break ;
+        }
+        case 6 :
+        {
+                for (int i = 0 ; i < id.size() ; i++)
+                {
+                        if (status[i]== "Avalible")
                         {
-                                for (int i = 0 ; i <id.size() ; i++)
-                                {
-                                        if (status[i]=="borrow")
-                                        {
-                                                cout <<id.at(i)  <<     " "   << name.at(i) <<   " "   << author.at(i)  <<  "\n" ;
-                                        }
-                                }
-                                break ;
+                                cout <<id.at(i)  <<     " "   << name.at(i) <<   " "   << author.at(i)  <<  "\n" ;
                         }
-                        case 8 :
+                }
+                break ; 
+        }
+        case 7 :
+        {
+                for (int i = 0 ; i <id.size() ; i++)
+                {
+                        if (status[i]=="Borrowed")
                         {
-                                cout <<"Thank you \n" ;
-                                run = false ;
+                                cout <<id.at(i)  <<     " "   << name.at(i) <<   " "   << author.at(i)  <<  "\n" ;
                         }
-                        }
-                        }
-                        }
+                }
+                break ;
+        }
+        case 8 :
+        {
+                cout <<"Exiting..." ;
+                run = false ;
+        }
+        }
+        }
+        }
