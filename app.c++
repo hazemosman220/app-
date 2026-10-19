@@ -5,7 +5,7 @@
 using namespace std ; 
         int menu ()
         {
-                cout << "\n=================";
+                cout << "\n=================\n";
                 cout << "\nLIBRARY MANAGEMENT SYSTEM\n";
                 cout <<"\n==================\n";
                 cout <<"1.Add new book\n";
